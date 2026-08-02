@@ -5,35 +5,262 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    pageLoader();
+    mobileMenu();
     navbarEffect();
     smoothScroll();
     revealElement();
     activeMenu();
     heroParallax();
+    backToTop();
+    modalDismiss();
+    modalSwipe();
+    setFooterYear();
+
     loadCharacters();
     loadAssets();
     loadEnvironment();
     loadAnimation();
 
-    const closeBtn = document.querySelector(".modal-close");
+    // Keyboard support: Enter/Space opens a focused gallery card
+    document.addEventListener("keydown", e => {
 
-    if (closeBtn) {
-        closeBtn.onclick = function () {
-            const video = document.getElementById("modal-video");
+        if ((e.key === "Enter" || e.key === " ") &&
+            e.target.classList.contains("gallery-card")) {
 
-        if(video){
-
-            video.pause();
-            video.removeAttribute("src");
-            video.load();
+            e.preventDefault();
+            e.target.click();
 
         }
 
-        document.getElementById("portfolio-modal").style.display = "none";
-        };
+    });
+
+    const closeBtn = document.querySelector(".modal-close");
+
+    if (closeBtn) {
+        closeBtn.onclick = closeModal;
     }
 
 });
+
+/* ==========================================================
+    Close Modal (shared)
+========================================================== */
+
+function closeModal() {
+
+    const video = document.getElementById("modal-video");
+
+    if (video) {
+
+        video.pause();
+        video.removeAttribute("src");
+        video.load();
+
+    }
+
+    document.getElementById("portfolio-modal").style.display = "none";
+    document.body.classList.remove("no-scroll");
+
+}
+
+function modalDismiss() {
+
+    const modal = document.getElementById("portfolio-modal");
+
+    if (!modal) return;
+
+    // Close when clicking on the dark backdrop (outside modal-content)
+    modal.addEventListener("click", e => {
+
+        if (e.target === modal) {
+            closeModal();
+        }
+
+    });
+
+    // Close with the Escape key
+    document.addEventListener("keydown", e => {
+
+        if (e.key === "Escape" && modal.style.display === "flex") {
+            closeModal();
+        }
+
+    });
+
+}
+
+/* ==========================================================
+    Swipe Support for Modal (mobile)
+========================================================== */
+
+function modalSwipe() {
+
+    const wrapper = document.querySelector(".image-wrapper");
+
+    if (!wrapper) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    wrapper.addEventListener("touchstart", e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    wrapper.addEventListener("touchend", e => {
+
+        touchEndX = e.changedTouches[0].screenX;
+
+        const delta = touchEndX - touchStartX;
+
+        if (Math.abs(delta) < 40) return;
+
+        if (delta < 0) {
+            document.getElementById("next-image")?.click();
+        } else {
+            document.getElementById("prev-image")?.click();
+        }
+
+    }, { passive: true });
+
+}
+
+/* ==========================================================
+    Page Loader
+========================================================== */
+
+function pageLoader() {
+
+    const loader = document.getElementById("loader");
+    const progressBar = document.getElementById("progress-bar");
+
+    if (!loader) return;
+
+    let progress = 0;
+
+    const interval = setInterval(() => {
+
+        progress += Math.random() * 18;
+
+        if (progress > 90) progress = 90;
+
+        if (progressBar) progressBar.style.width = progress + "%";
+
+    }, 150);
+
+    const finish = () => {
+
+        clearInterval(interval);
+
+        if (progressBar) progressBar.style.width = "100%";
+
+        setTimeout(() => {
+
+            loader.classList.add("loader-hidden");
+
+            setTimeout(() => {
+                if (progressBar) progressBar.style.width = "0";
+            }, 500);
+
+        }, 250);
+
+    };
+
+    if (document.readyState === "complete") {
+        finish();
+    } else {
+        window.addEventListener("load", finish);
+    }
+
+}
+
+/* ==========================================================
+    Mobile Menu
+========================================================== */
+
+function mobileMenu() {
+
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+    const overlay = document.getElementById("nav-overlay");
+
+    if (!toggle || !menu) return;
+
+    const openMenu = () => {
+
+        menu.classList.add("active");
+        toggle.classList.add("active");
+        overlay?.classList.add("active");
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("no-scroll");
+
+    };
+
+    const closeMenu = () => {
+
+        menu.classList.remove("active");
+        toggle.classList.remove("active");
+        overlay?.classList.remove("active");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("no-scroll");
+
+    };
+
+    toggle.addEventListener("click", () => {
+
+        menu.classList.contains("active") ? closeMenu() : openMenu();
+
+    });
+
+    overlay?.addEventListener("click", closeMenu);
+
+    menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 992) closeMenu();
+
+    });
+
+}
+
+/* ==========================================================
+    Back to Top
+========================================================== */
+
+function backToTop() {
+
+    const btn = document.getElementById("back-to-top");
+
+    if (!btn) return;
+
+    window.addEventListener("scroll", () => {
+
+        btn.classList.toggle("show", window.scrollY > 500);
+
+    });
+
+    btn.addEventListener("click", () => {
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+    });
+
+}
+
+/* ==========================================================
+    Footer Year
+========================================================== */
+
+function setFooterYear() {
+
+    const year = document.getElementById("year");
+
+    if (year) year.textContent = new Date().getFullYear();
+
+}
 
 /* ==========================================================
     Navbar Effect
@@ -187,8 +414,8 @@ async function loadCharacters() {
         characters.forEach((character, index) => {
 
             gallery.innerHTML += `
-                <div class="gallery-card" data-id="${index}">
-                    <img src="${character.thumbnail}" alt="${character.title}">
+                <div class="gallery-card" data-id="${index}" tabindex="0" role="button" aria-label="Lihat ${character.title}">
+                    <img src="${character.thumbnail}" alt="${character.title}" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
                     <div class="gallery-info">
                         <h3>${character.title}</h3>
                         <p>${character.category}</p>
@@ -233,8 +460,8 @@ async function loadAssets() {
         assets.forEach(asset => {
 
             gallery.innerHTML += `
-                <div class="gallery-card">
-                    <img src="${asset.thumbnail}" alt="${asset.title}">
+                <div class="gallery-card" tabindex="0" role="button" aria-label="Lihat ${asset.title}">
+                    <img src="${asset.thumbnail}" alt="${asset.title}" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
                     <div class="gallery-info">
                         <h3>${asset.title}</h3>
                         <p>${asset.category}</p>
@@ -280,8 +507,8 @@ async function loadEnvironment() {
         environment.forEach(environment => {
 
             gallery.innerHTML += `
-                <div class="gallery-card">
-                    <img src="${environment.thumbnail}" alt="${environment.title}">
+                <div class="gallery-card" tabindex="0" role="button" aria-label="Lihat ${environment.title}">
+                    <img src="${environment.thumbnail}" alt="${environment.title}" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
                     <div class="gallery-info">
                         <h3>${environment.title}</h3>
                         <p>${environment.category}</p>
@@ -327,8 +554,8 @@ async function loadAnimation() {
         animations.forEach(animation => {
 
             gallery.innerHTML += `
-                <div class="gallery-card">
-                    <img src="${animation.thumbnail}" alt="${animation.title}">
+                <div class="gallery-card" tabindex="0" role="button" aria-label="Putar ${animation.title}">
+                    <img src="${animation.thumbnail}" alt="${animation.title}" loading="lazy" decoding="async" onload="this.classList.add('loaded')">
                     <div class="gallery-info">
                         <h3>${animation.title}</h3>
                         <p>${animation.category}</p>
@@ -387,6 +614,7 @@ function openCharacter(character) {
 ;
 
     modal.style.display = "flex";
+    document.body.classList.add("no-scroll");
 
 }
 
@@ -413,6 +641,7 @@ function openAsset(asset) {
     document.getElementById("modal-description").innerHTML = asset.description;
 
     modal.style.display = "flex";
+    document.body.classList.add("no-scroll");
 }
 
 function openEnvironment(environment) {
@@ -440,6 +669,7 @@ function openEnvironment(environment) {
     document.getElementById("prev-image").style.display = "block";
 
     modal.style.display = "flex";
+    document.body.classList.add("no-scroll");
 }
 
 function openAnimation(animation){
@@ -461,6 +691,7 @@ function openAnimation(animation){
     document.getElementById("prev-image").style.display = "none";
 
     modal.style.display = "flex";
+    document.body.classList.add("no-scroll");
 
 }
 

@@ -12,6 +12,17 @@
 
     <meta name="description"
         content="Professional 3D Artist Portfolio showcasing characters, environments, assets and animation.">
+    <meta name="theme-color" content="#0D0D0D">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Alfitri Deviani | 3D Artist">
+    <meta property="og:description"
+        content="Professional 3D Artist Portfolio showcasing characters, environments, assets and animation.">
+    <meta property="og:image" content="assets/images/profile/profile.webp">
+    <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +40,18 @@
 </head>
 
 <body>
+
+    <!-- ========================================= -->
+    <!-- Loader -->
+    <!-- ========================================= -->
+    <!--
+    <div id="loader">
+        <div class="loader-logo">AD</div>
+        <p>Loading portfolio...</p>
+    </div>
+    
+    <div id="progress-bar"></div>
+    -->
     <!-- ========================================= -->
     <!-- Header -->
     <!-- ========================================= -->
@@ -43,7 +66,7 @@
                     AD
                 </a>
 
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="nav-menu">
 
                     <li><a href="#featured">Featured</a></li>
                     <li><a href="#characters">Character</a></li>
@@ -53,11 +76,19 @@
 
                 </ul>
 
+                <button id="nav-toggle" class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
             </nav>
 
         </div>
 
     </header>
+
+    <div id="nav-overlay" class="nav-overlay"></div>
 
     <!-- ========================================= -->
     <!-- Hero -->
@@ -69,7 +100,8 @@
             autoplay
             muted
             loop
-            playsinline>
+            playsinline
+            poster="assets/images/environment/environment2/render1.png">
 
             <source src="assets/videos/hero.mp4" type="video/mp4">
 
@@ -137,8 +169,10 @@
 
                 <div class="profile-image">
 
-                    <img src="assets/images/profile/profile.jpg"
-                        alt="Profile">
+                    <img src="assets/images/profile/foto.png"
+                        alt="Profile"
+                        width="320" height="320"
+                        loading="eager">
 
                 </div>
 
@@ -161,8 +195,8 @@
                     <p>
 
                         Experienced in creating optimized assets
-                        using Blender, Maya, ZBrush,
-                        Substance Painter, Unreal Engine and Unity.
+                        using Blender, Marmoset, ZBrush,
+                        Substance Painter, Photoshop and Unity.
 
                     </p>
 
@@ -171,11 +205,10 @@
                     <div class="skill-list">
 
                         <span>Blender</span>
+                        <span>Marmoset</span>
                         <span>ZBrush</span>
                         <span>Substance Painter</span>
                         <span>Photoshop</span>
-                        <span>Marmoset</span>
-                        <span>Unreal Engine</span>
                         <span>Unity</span>
 
                     </div>
@@ -293,20 +326,20 @@
     <!-- Portfolio Modal -->
     <div id="portfolio-modal" class="modal">
     <div class="modal-content">
-    <span class="modal-close">&times;</span>
+    <span class="modal-close" aria-label="Tutup" role="button">&times;</span>
 
     <div class="modal-gallery">
-    <button id="prev-image">
+    <button id="prev-image" aria-label="Gambar sebelumnya">
         ❮</button>
             <div class="image-wrapper">
-                <img id="modal-image">
+                <img id="modal-image" alt="">
                    <video id="modal-video"
                     controls
                     playsinline
                     style="display:none;">
                     </video>
             </div>
-        <button id="next-image">
+        <button id="next-image" aria-label="Gambar selanjutnya">
         ❯
         </button>
     </div>
@@ -316,6 +349,56 @@
 
 
 </div>
+
+    <!-- ========================================= -->
+    <!-- Back to top -->
+    <!-- ========================================= -->
+
+    <button id="back-to-top" aria-label="Kembali ke atas">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ========================================= -->
+    <!-- Footer -->
+    <!-- ========================================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+                <a href="#home" class="logo">AD</a>
+                <p>Creating high-quality game-ready characters, stylized assets, environments and cinematic animations.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#characters">Character</a></li>
+                    <li><a href="#assets">Asset</a></li>
+                    <li><a href="#environment">Environment</a></li>
+                    <li><a href="#animation">Animation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Terhubung</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="ArtStation" target="_blank" rel="noopener"><i class="fa-brands fa-artstation"></i></a>
+                    <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:hello@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Alfitri Deviani. All rights reserved.</p>
+        </div>
+
+    </footer>
     <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
     <script src="script.js"></script>
 </body>
