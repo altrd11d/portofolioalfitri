@@ -1,0 +1,116 @@
+[
+{
+"id":1,
+"title":"The Neon Shadow - Sci-Fi Game Asset",
+"category":"3D Characters / Sci-Fi & Fantasy / Game Assets",
+
+"thumbnail":
+"assets/images/characters/character1/render1.png",
+
+"images":[
+"assets/images/characters/character1/render1.png",
+"assets/images/characters/character1/render2.png",
+"assets/images/characters/character1/render3.png",
+"assets/images/characters/character1/render4.png"
+],
+
+"description":
+"A former elite technician turned vigilante. operates in total darkness using his light-absorbing coat. The blue neon patterns on his legs are energy stabilizers that allow him to move with superhuman speed and precision. His red mask conceals his identity while providing real-time tactical data to hunt his targets."
+
+},
+{
+"id":2,
+"title":"Sergeant Miller, 'The Golden Gun'",
+"category":"3D Characters / Sci-Fi & Fantasy / Game Assets",
+
+"thumbnail":
+"assets/images/characters/character2/render1.png",
+
+"images":[
+"assets/images/characters/character2/render1.png",
+"assets/images/characters/character2/render2.png",
+"assets/images/characters/character2/render3.png",
+"assets/images/characters/character2/render4.png"
+],
+
+"description":
+"A special operations veteran turned private military contractor. Miller is a perfectionist weapons specialist. He custom-modifies his signature rifle with a pure gold finish as both a visual signature and a warning to his enemies. He is known for being calm, methodical, and highly efficient in every mission."
+
+},
+{
+"id":3,
+"title":"The Silencer",
+"category":"3D Characters / Sci-Fi & Fantasy / Game Assets",
+
+"thumbnail":
+"assets/images/characters/character3/render1.png",
+
+"images":[
+"assets/images/characters/character3/render1.png",
+"assets/images/characters/character3/render2.png",
+"assets/images/characters/character3/render3.png",
+"assets/images/characters/character3/render4.png"
+],
+
+"description":
+"A private military contractor expert in silent infiltration. Her main specialization is neutralizing targets or security systems without making a sound or leaving a trace. Nicknamed 'The Silencer' for her ability to disappear into a crowd and complete missions with lethal precision, often ending threats before the target realizes she is there."
+
+},
+{
+"id":4,
+"title":"The Crimson Edge",
+"category":"3D Characters / Sci-Fi & Fantasy / Game Assets",
+
+"thumbnail":
+"assets/images/characters/character4/render1.png",
+
+"images":[
+"assets/images/characters/character4/render1.png",
+"assets/images/characters/character4/render2.png",
+"assets/images/characters/character4/render3.png",
+"assets/images/characters/character4/render4.png"
+],
+
+"description":
+"A frontline combat specialist who combines speed and destructive power. Wearing tactical gear accented with glowing red lines and wielding her signature energy blade, she is relied upon to breach even the tightest enemy defenses. Her presence on the battlefield is always a sign of swift destruction for opposing forces."
+
+},
+{
+"id":5,
+"title":"Vanguard",
+"category":"3D Characters / Sci-Fi & Fantasy / Game Assets",
+
+"thumbnail":
+"assets/images/characters/character5/render1.png",
+
+"images":[
+"assets/images/characters/character5/render1.png",
+"assets/images/characters/character5/render2.png",
+"assets/images/characters/character5/render3.png",
+"assets/images/characters/character5/render4.png"
+],
+
+"description":
+"An elite space operations specialist assigned as a frontline explorer. Equipped with the latest Aegis model armor that is resistant to radiation and impact, Vanguard is the first to step into uncharted territory or dangerous alien planets. Their orange visor is not just protection, but an advanced HUD system that scans the environment and threats in real-time."
+
+},
+{
+"id":6,
+"title":"Captain Stellar",
+"category":"3D Characters / Sci-Fi & Fantasy / Game Assets",
+
+"thumbnail":
+"assets/images/characters/character6/render1.png",
+
+"images":[
+"assets/images/characters/character6/render1.png",
+"assets/images/characters/character6/render2.png",
+"assets/images/characters/character6/render3.png",
+"assets/images/characters/character6/render4.png"
+],
+
+"description":
+"An interplanetary superhero who serves as a symbol of hope for the galactic alliance. With his Aero-Suit that allows him to fly through atmospheres and his energy-stabilizing red cape, Captain Stellar is a fearless defender of justice. He patrols the farthest sectors, protecting planets from cosmic threats and intergalactic criminal organizations."
+
+}
+]

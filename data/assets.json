@@ -1,0 +1,60 @@
+[
+{
+"id":1,
+"title":"Retro Sci-Fi Arcade Machines",
+"category":"Sci-Fi & Fantasy /Game Assets",
+
+"thumbnail":
+"assets/images/assets/assets1/render1.png",
+
+"images":[
+"assets/images/assets/assets1/render1.png",
+"assets/images/assets/assets1/render2.png",
+"assets/images/assets/assets1/render3.png",
+"assets/images/assets/assets1/render4.png"
+],
+
+"description":
+"A set of futuristic arcade gaming cabinets complete with iconic red bar stools. This 3D asset is ideal for enriching indoor environmental details such as entertainment zones, lounges, or public areas in sci-fi and modern-themed games."
+
+},
+
+{
+"id":2,
+"title":"Street Skull Skateboard",
+"category":"Game Assets",
+
+"thumbnail":
+"assets/images/assets/assets2/render1.png",
+
+"images":[
+"assets/images/assets/assets2/render1.png",
+"assets/images/assets/assets2/render2.png",
+"assets/images/assets/assets2/render3.png",
+"assets/images/assets/assets2/render4.png"
+],
+
+"description":
+"An urban-style skateboard featuring a classic skull graphic design on its black deck. This 3D asset is ideal for use as an urban street environment prop, room decoration, or a supporting element for a youthful and rebellious character."
+
+},
+{
+"id":3,
+"title":"Red Sport Coupe",
+"category":"Game Assets",
+
+"thumbnail":
+"assets/images/assets/assets3/render1.png",
+
+"images":[
+"assets/images/assets/assets3/render1.png",
+"assets/images/assets/assets3/render2.png",
+"assets/images/assets/assets3/render3.png",
+"assets/images/assets/assets3/render4.png"
+],
+
+"description":
+"A bright red sport coupe featuring elegant gold-finished wheel rims. This 3D asset is ideal for use as an urban environment vehicle prop, street racing car, or a decorative element in racing and modern-themed games."
+
+}
+]
