@@ -56,5 +56,45 @@
 "description":
 "A bright red sport coupe featuring elegant gold-finished wheel rims. This 3D asset is ideal for use as an urban environment vehicle prop, street racing car, or a decorative element in racing and modern-themed games."
 
+},
+
+{
+"id":4,
+"title":"Holographic Weapon Sight",
+"category":"Game Assets, Military Asset",
+
+"thumbnail":
+"assets/images/assets/assets4/render1.png",
+
+"images":[
+"assets/images/assets/assets4/render1.png",
+"assets/images/assets/assets4/render2.png",
+"assets/images/assets/assets4/render3.png",
+"assets/images/assets/assets4/render4.png"
+],
+
+"description":
+"A detailed 3D model of a tactical holographic weapon sight designed for modern firearms. The asset features a rugged black housing, integrated viewing window, adjustment controls, mounting base, and realistic mechanical detailing. Suitable for military, FPS, tactical, and realistic game environments."
+
+},
+
+{
+"id":5,
+"title":"Military Tactical Watch",
+"category":"Game Assets, Accessory Asset",
+
+"thumbnail":
+"assets/images/assets/assets5/render1.png",
+
+"images":[
+"assets/images/assets/assets5/render1.png",
+"assets/images/assets/assets5/render2.png",
+"assets/images/assets/assets5/render3.png",
+"assets/images/assets/assets5/render4.png"
+],
+
+"description":
+"A detailed 3D model of a military-style tactical wristwatch with a rugged design, analog dial, adjustable strap, and realistic mechanical details. Created for use as a realistic environmental or character accessory in games and 3D projects."
+
 }
 ]
