@@ -29,5 +29,20 @@
 "description":
 "A cute stylized 3D fantasy environment featuring a small bear character, whimsical mushroom-like trees, colorful vegetation, a charming fantasy house, and a winding stream. The scene is designed with a playful low-poly aesthetic, soft shapes, and a magical fairytale atmosphere, making it suitable for games, animation, illustrations, cinematics, and fantasy-themed projects."
 
+},
+{
+"id":3,
+"title":"Rubik's Cube Assembly Animation",
+"category":"Animations / Motion Graphics",
+
+"thumbnail":
+"assets/videos/animation1/render1.png",
+
+"video": 
+"assets/videos/animation1/vid1.mp4",
+
+"description":
+"A dynamic 3D animation video showcasing scattered cube pieces assembling into a complete rubik's cube form. This animation asset is ideal for use as a teaser, product introduction video, or an engaging interactive transition visual effect."
+
 }
 ]
