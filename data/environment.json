@@ -33,5 +33,23 @@
 "description":
 "A futuristic interior laboratory environment featuring a circular red light-emitting device and floating cube particle effects. This environment asset is ideal for sci-fi-themed games, secret base rooms, advanced research facilities, or teleportation sequences."
 
+},
+
+{
+"id":2,
+"title":"Indonesian School Classroom Interior",
+"category":"Interior & Educational /Environment",
+
+"thumbnail":
+"assets/images/environment/environment3/render1.png",
+
+"images":[
+"assets/images/environment/environment3/render1.png",
+"assets/images/environment/environment3/render3.png"
+],
+
+"description":
+"A futuristic interior laboratory environment featuring a circular red light-emitting device and floating cube particle effects. This environment asset is ideal for sci-fi-themed games, secret base rooms, advanced research facilities, or teleportation sequences."
+
 }
 ]
