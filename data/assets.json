@@ -97,4 +97,24 @@
 "A detailed 3D model of a military-style tactical wristwatch with a rugged design, analog dial, adjustable strap, and realistic mechanical details. Created for use as a realistic environmental or character accessory in games and 3D projects."
 
 }
+
+{
+"id":6,
+"title":"Komatsu PC200 Excavator – Detailed 3D Model with Interior",
+"category":"Game Assets, Construction Equipment",
+
+"thumbnail":
+"assets/images/assets/assets6/render1.png",
+
+"images":[
+"assets/images/assets/assets6/render1.png",
+"assets/images/assets/assets6/render2.png",
+"assets/images/assets/assets6/render3.png",
+"assets/images/assets/assets6/render4.png"
+],
+
+"description":
+"Detailed 3D model of a Komatsu PC200 excavator, featuring a fully modeled exterior and detailed operator cabin interior. The model includes the excavator arm, bucket, hydraulic components, tracks, engine housing, cabin, operator seat, control levers, dashboard, windows, and other mechanical details."
+
+}
 ]
